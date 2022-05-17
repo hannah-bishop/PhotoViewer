@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import { PageTitle } from "./components/PageTitle/PageTitle";
+import {PhotoViewer} from "./components/PhotoViewer/PhotoViewer"
+import {ImageList} from "./components/ThumbnailImageList/ThumbNailImageList.jsx"
 
 function App() {
+  const [headerImage , setHeaderImage] = useState("https://picsum.photos/id/600/1600/900.jpg");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <PageTitle title="React Photo Editor"/>
+        <PhotoViewer src={headerImage}/>
       </header>
+      <ImageList setHeaderImage={setHeaderImage}/>
     </div>
   );
 }
 
 export default App;
+
+
+

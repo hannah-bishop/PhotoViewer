@@ -1,0 +1,13 @@
+.thumbnail-image{
+    width:100%;
+}
+.thumbnail-list{
+    padding:0;
+    margin:0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.thumbnail-image-list{
+    width:25%
+}
