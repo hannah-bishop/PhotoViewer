@@ -19,14 +19,7 @@ test('checks for broken images', () => {
 test('checks the page functions properly', () => {
   const {getByAltText} = render(<App />); //creating a version of the webpage
   let headerImageTest =  getByAltText("header picture");
-  let testImages = []
-  const brokenImages = [ 1, 24, 32, 36, 44, 47 ];
-  for (let i = 0; i < 50; i++) {
-    if (!brokenImages.includes(i)) {
-        const imageNumberString = i.toString().padStart(2, '0');
-        testImages.push(imageNumberString);
-    }
-  }
+  let testImages = ["02", "03", "25", "30", "45", "49"]
   for (let i=0; i<testImages.length; i++){
     let selectedImageTest = getByAltText(`${testImages[i]}`);
     fireEvent.click(selectedImageTest);
